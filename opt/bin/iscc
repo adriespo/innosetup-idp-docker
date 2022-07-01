@@ -22,7 +22,7 @@ winenv() {
 }
 
 #check if debug mode
-if [ $2 == "debug" ]; then
+if [ $2 == debug ]; then
     debug_mode=1;
 fi
 
@@ -33,7 +33,7 @@ INNO_PATH="${PROGFILES_PATH}/${INNO_BIN}"
 
 eval set -- "$(winpaths "$@")"
 
-if [ debug_mode eq 1 ]; then
+if [ debug_mode eq 1]; then
     wine "$INNO_PATH" "/O+" "$@"
 else
     exec wine "$INNO_PATH" "/O+" "$@"
