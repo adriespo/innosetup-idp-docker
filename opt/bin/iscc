@@ -21,11 +21,6 @@ winenv() {
     wine cmd /c "echo $1" | tr -d '\r'
 }
 
-#check if debug mode
-if [ $2 == debug ]; then
-    debug_mode=1;
-fi
-
 PROGFILES_PATH="$(winepath -u "$(winenv %PROGRAMFILES%)")"
 
 INNO_BIN="Inno Setup 6/ISCC.exe"
@@ -33,8 +28,4 @@ INNO_PATH="${PROGFILES_PATH}/${INNO_BIN}"
 
 eval set -- "$(winpaths "$@")"
 
-if [ debug_mode eq 1]; then
-    wine "$INNO_PATH" "/O+" "$@"
-else
-    exec wine "$INNO_PATH" "/O+" "$@"
-fi
+exec wine "$INNO_PATH" "/O+" "$@"
