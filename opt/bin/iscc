@@ -28,4 +28,4 @@ INNO_PATH="${PROGFILES_PATH}/${INNO_BIN}"
 
 eval set -- "$(winpaths "$@")"
 
-exec wine "$INNO_PATH" "$@"
+exec wine "$INNO_PATH" "/O+" "$@"
