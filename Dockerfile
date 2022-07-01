@@ -16,6 +16,10 @@ ENV DISPLAY :99
 COPY opt /opt
 ENV PATH $PATH:/opt/bin
 
+#path of the Inno Download Plugin exe
+COPY ext /ext
+ENV IDP_PATH $PATH:/ext/bin
+
 USER xclient
 
 # InnoSetup ignores dotfiles if they are considered hidden, so set
