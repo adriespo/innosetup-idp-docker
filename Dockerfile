@@ -1,5 +1,5 @@
-FROM amake/wine:latest as inno
-MAINTAINER Aaron Madlon-Kay <aaron@madlon-kay.com>
+FROM adriespo/innosetup-idp-docker:latest as inno
+MAINTAINER Adriano G. V. Esposito <adriano.esposito@gmail.com>
 
 USER root
 
