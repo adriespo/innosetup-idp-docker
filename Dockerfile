@@ -36,7 +36,7 @@ RUN curl -SL "https://files.jrsoftware.org/is/6/innosetup-6.2.1.exe" -o is.exe \
     
 # Install Inno Download Plugin binaries
 RUN wine-x11-run wine /ext/bin/idpsetup-1.5.1.exe /SP- /VERYSILENT /ALLUSERS /SUPPRESSMSGBOXES /DOWNLOADISCRYPT=1
-RUN rm idp.exe
+RUN rm -r /ext
     
 # Install unofficial languages
 RUN cd "/home/xclient/.wine/drive_c/Program Files/Inno Setup 6/Languages" \
