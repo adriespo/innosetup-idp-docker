@@ -29,7 +29,12 @@ RUN wine reg add 'HKEY_CURRENT_USER\Software\Wine' /v ShowDotFiles /d Y \
 RUN curl -SL "https://files.jrsoftware.org/is/6/innosetup-6.2.1.exe" -o is.exe \
     && wine-x11-run wine is.exe /SP- /VERYSILENT /ALLUSERS /SUPPRESSMSGBOXES /DOWNLOADISCRYPT=1 \
     && rm is.exe
-
+    
+# Install Inno Download Plugin binaries
+RUN curl -SL "https://bitbucket.org/mitrich_k/inno-download-plugin/downloads/idpsetup-1.5.1.exe" -o idp.exe \
+    && wine-x11-run wine idp.exe /SP- /VERYSILENT /ALLUSERS /SUPPRESSMSGBOXES /DOWNLOADISCRYPT=1 \
+    && rm is.exe
+    
 # Install unofficial languages
 RUN cd "/home/xclient/.wine/drive_c/Program Files/Inno Setup 6/Languages" \
     && curl -L "https://api.github.com/repos/jrsoftware/issrc/tarball/is-6_2_1" \
