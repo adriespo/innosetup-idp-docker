@@ -17,7 +17,7 @@ COPY opt /opt
 ENV PATH $PATH:/opt/bin
 
 #path of the Inno Download Plugin exe
-COPY ext /ext/
+COPY ext /ext
 ENV PATH $PATH:/ext/bin
 
 USER xclient
