@@ -21,7 +21,7 @@ winenv() {
     wine cmd /c "echo $1" | tr -d '\r'
 }
 
-if [ $2 = "debug" ]
+if [ $1 = "debug" ]
 then
     debug_mode=1
 fi
@@ -35,7 +35,7 @@ eval set -- "$(winpaths "$@")"
 
 if [ $debug_mode -eq 1 ]
 then
-    /bin/bash  
+    /bin/bash
 else
     exec wine "$INNO_PATH" "/O+" "$@"
 fi
