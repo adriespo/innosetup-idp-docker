@@ -18,7 +18,7 @@ ENV PATH $PATH:/opt/bin
 
 #path of the Inno Download Plugin exe
 COPY ext /ext/
-ENV IDP_PATH $PATH:/ext/bin
+ENV PATH $PATH:/ext/bin
 
 USER xclient
 
