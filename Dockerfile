@@ -16,10 +16,6 @@ ENV DISPLAY :99
 COPY opt /opt
 ENV PATH $PATH:/opt/bin
 
-#path of the Inno Download Plugin exe
-COPY ext /ext
-ENV PATH $PATH:/ext/bin
-
 USER xclient
 
 # InnoSetup ignores dotfiles if they are considered hidden, so set
@@ -67,6 +63,10 @@ RUN dpkg --add-architecture i386 \
 
 COPY opt /opt
 ENV PATH $PATH:/opt/bin
+
+#path of the Inno Download Plugin exe
+COPY ext /ext
+ENV PATH $PATH:/ext/bin
 
 COPY --chown=xclient:xusers --from=inno /home/xclient/.wine /home/xclient/.wine
 RUN mkdir /work && chown xclient:xusers -R /work
