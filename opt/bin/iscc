@@ -33,7 +33,7 @@ INNO_PATH="${PROGFILES_PATH}/${INNO_BIN}"
 eval set -- "$(winpaths "$@")"
 
 if [ $debug_mode -eq 1 ]; then
-    wine "$INNO_PATH" "/O+" "$1"    
+    /bin/bash  
 else
     exec wine "$INNO_PATH" "/O+" "$@"
 fi
