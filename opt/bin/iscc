@@ -35,7 +35,7 @@ eval set -- "$(winpaths "$@")"
 
 if [ $debug_mode -eq 1 ]
 then
-    /bin/bash
+    exec /bin/bash
 else
     exec wine "$INNO_PATH" "/O+" "$@"
 fi
