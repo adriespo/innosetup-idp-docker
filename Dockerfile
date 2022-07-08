@@ -34,7 +34,7 @@ RUN curl -SL "https://files.jrsoftware.org/is/6/innosetup-6.2.1.exe" -o is.exe \
 COPY ext /ext
 ENV PATH $PATH:/ext/bin
 # RUN wine-x11-run wine idpsetup-1.5.1.exe
-RUN wine-x11-run wine idpsetup-1.5.1.exe
+RUN wine idpsetup-1.5.1.exe
 # && rm -r /ext
     
 # Install unofficial languages
