@@ -647,4 +647,4 @@ begin
     idpInitMessages;
 end;
 
-#include <C:\Program Files\Inno Setup 6\default.iss>
+#include <"C:\Program Files\Inno Setup 6\default.iss">
