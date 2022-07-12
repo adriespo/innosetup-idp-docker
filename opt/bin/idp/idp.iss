@@ -3,7 +3,8 @@
 ; http://mitrichsoftware.wordpress.com/
 ; https://code.google.com/p/inno-download-plugin/
 
-#define IDPROOT ExtractFilePath(__PATHFILENAME__)
+#define IDPROOT "Z:\opt\bin\idp"
+
 
 #ifdef UNICODE
     #pragma include __INCLUDE__ + ";" + IDPROOT + "\unicode"
