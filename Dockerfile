@@ -31,10 +31,8 @@ RUN curl -SL "https://files.jrsoftware.org/is/6/innosetup-6.2.1.exe" -o is.exe \
     && rm is.exe
     
 # Install Inno Download Plugin binaries
-COPY ext /ext
-ENV PATH $PATH:/ext/bin
 # RUN wine-x11-run wine idpsetup-1.5.1.exe
-RUN wine idpsetup-1.5.1.exe
+# RUN wine idpsetup-1.5.1.exe
 # && rm -r /ext
     
 # Install unofficial languages
@@ -66,8 +64,6 @@ RUN dpkg --add-architecture i386 \
 
 COPY opt /opt
 ENV PATH $PATH:/opt/bin
-COPY ext /ext
-ENV PATH $PATH:/ext/bin
 
 COPY --chown=xclient:xusers --from=inno /home/xclient/.wine /home/xclient/.wine
 RUN mkdir /work && chown xclient:xusers -R /work
