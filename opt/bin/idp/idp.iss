@@ -5,25 +5,12 @@
 
 #define IDPROOT "Z:\opt\bin\idp"
 
+#pragma include __INCLUDE__ + ";" + IDPROOT
 
 #ifdef UNICODE
-    #pragma include __INCLUDE__ + ";" + IDPROOT + "\unicode"
+    #define IDPDLLDIR IDPROOT
 #else
-    #pragma include __INCLUDE__ + ";" + IDPROOT + "\ansi"
-#endif
-
-; If IDP_DEBUG is defined before including idp.iss, script will use debug version of idp.dll (not included, you need to build it yourself).
-; Debug dll messages can be viewed with SysInternals DebugView (http://technet.microsoft.com/en-us/sysinternals/bb896647.aspx)
-#ifdef IDP_DEBUG
-    #define DBGSUFFIX " debug"
-#else
-    #define DBGSUFFIX
-#endif
-
-#ifdef UNICODE
-    #define IDPDLLDIR IDPROOT + "\unicode" + DBGSUFFIX
-#else
-    #define IDPDLLDIR IDPROOT + "\ansi" + DBGSUFFIX
+    #define IDPDLLDIR IDPROOT
 #endif
 
 #define IDP_VER_MAJOR         
