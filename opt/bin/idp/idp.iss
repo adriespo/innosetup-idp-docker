@@ -647,4 +647,4 @@ begin
     idpInitMessages;
 end;
 
-#include <"Z:\opt\bin\idp\default.iss">
+#include <Z:\opt\bin\idp\default.iss>
