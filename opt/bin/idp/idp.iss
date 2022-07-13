@@ -7,11 +7,7 @@
 
 #pragma include __INCLUDE__ + ";" + IDPROOT
 
-#ifdef UNICODE
-    #define IDPDLLDIR IDPROOT
-#else
-    #define IDPDLLDIR IDPROOT
-#endif
+#define IDPDLLDIR IDPROOT
 
 #define IDP_VER_MAJOR         
 #define IDP_VER_MINOR
@@ -55,17 +51,11 @@ procedure idpSetComponents(components: String);                  external 'idpSe
 procedure idpReportError;                                        external 'idpReportError@files:idp.dll cdecl';
 procedure idpTrace(text: String);                                external 'idpTrace@files:idp.dll cdecl';
 
-#if defined(UNICODE) && (Ver >= 0x05050300)
+
 procedure idpAddFileSize(url, filename: String; size: Int64);    external 'idpAddFileSize@files:idp.dll cdecl';
 procedure idpAddFileSizeComp(url, filename: String; size: Int64; components: String); external 'idpAddFileSize@files:idp.dll cdecl';
 function  idpGetFileSize(url: String; var size: Int64): Boolean; external 'idpGetFileSize@files:idp.dll cdecl';
 function  idpGetFilesSize(var size: Int64): Boolean;             external 'idpGetFilesSize@files:idp.dll cdecl';
-#else
-procedure idpAddFileSize(url, filename: String; size: Dword);    external 'idpAddFileSize32@files:idp.dll cdecl';
-procedure idpAddFileSizeComp(url, filename: String; size: Dword; components: String); external 'idpAddFileSize32@files:idp.dll cdecl';
-function  idpGetFileSize(url: String; var size: Dword): Boolean; external 'idpGetFileSize32@files:idp.dll cdecl';
-function  idpGetFilesSize(var size: Dword): Boolean;             external 'idpGetFilesSize32@files:idp.dll cdecl';
-#endif
 
 type TIdpForm = record
         Page              : TWizardPage;
